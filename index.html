@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<style>
+*{
+margin:0;
+padding:0;
+}
+html,body{
+height:100%;
+width:100%;
+background-color:black;
+display:flex;
+overflow:hidden;
+
+}
+#game{
+position:absolute;
+height:70%;
+width:70%%;
+top:20%;
+left:15%;
+border:5px solid #7e412c;
+}
+
+#sort{
+}
+#container{
+position:absolute;
+display:flex;
+align-items:center;
+justify-content:left;
+height:10%;
+width:100%;
+z-index:10000000000000000;
+flex-flow:row-reverse;
+color:wheat;
+background:#0f0a7c;
+
+}
+#text-data{
+margin-left:2%;
+margin-right:2%;
+
+
+}
+</style>
+</head>
+<body>
+    <div id="container">    
+<label for="Sort_algo">  Choose a Sorting algorithm</label>
+<select id="sort" name="Sort_algo">
+  <option value="insertion_sort">INSERTION SORT</option>
+  <option value="merge_sort">MERGE SORT</option>
+  <option value="heap_sort">HEAP SORT</option>
+  <option value="intro_sort">INTRO SORT</option>
+</select>
+<input type="file" id="data-in-file"></input>
+<input type="text" id="text-data"></input>
+</div>
+    <canvas id="game"></canvas> 
+    <script src="sort.js"></script>
+</body>
+</html>
+
+
