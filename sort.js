@@ -1,29 +1,4 @@
- let custom_val=[3,55,28,9,78,8,9,10,49,13,23,
-     12,15,100,20,26,18,16,70,21,24,29,30,27,26,31,33,37,39,40
-     ,45,55,51,52,60,65,67,70,3,55,28,9,78,8,9,10,49,13,23,12,15,
-     100,20,26,18,16,70,21,24,29,30,27,26,31,33,37,39,40,45,55,51,52,60,
-     65,67,70,3,55,28,9,78,8,9,10,49,13,23,12,15,100,20,26,18,16,70,21,24,29,30,27,26,31,
-     33,37,39,40,45,55,51,52,60,65,67,70,55,28,78,8,9,10,49,13,23,12,15,100,20,26,18,70,21,24,29,30,27,26,31,33,37,39,40,45,55,51,52,60,65,67,70 ];
-const can = document.querySelector("canvas");
-const can_mode = can.getContext("2d");
-const choosed_algo=document.getElementById("sort");
-can_mode.fillStyle = "red";
-choosed_algo.addEventListener("change", (event) => {
-
-let choice=event.target.value;
-  if(choice === "insertion_sort"){
-insertion_sort(custom_val);
-  }
-    else if(choice == "heap_sort"){
-        heapSort(custom_val);
-
-
-    }
-    else{
-alert("this algo has not been implemented yet create a issue if you want to ");
-    }
-});
-
+//line renderer here
 function line(num) {
   can_mode.clearRect(0, 0, can.width, can.height);
   let position = 0;
@@ -34,10 +9,50 @@ function line(num) {
     position += width + 1;
   }
 }
+//====================================================================================/////
+//===================================================================================//////
+//canvas intilization 
+const can = document.querySelector("canvas");
+const can_mode = can.getContext("2d");
+const choosed_algo=document.getElementById("sort");
+can_mode.fillStyle = "red";
+//=====================================================================================
+//=====================================================================================
+//choose sort algo to render 
+choosed_algo.addEventListener("change", (event) => {
+
+let choice=event.target.value;
+  if(choice === "insertion_sort"){
+insertion_sort(structuredClone(custom_val));
+  }
+    else if(choice == "heap_sort"){
+        heapSort(structuredClone(custom_val));
 
 
+    }
+    else{
+        line(0);
+    }
+});
+//======================================================================================
+//=====================================================================================
+// primary data
+ let custom_val=[3,55,28,9,78,8,9,10,49,13,23,
+     12,15,100,20,26,18,16,70,21,24,29,30,27,26,31,33,37,39,40
+     ,45,55,51,52,60,65,67,70,3,55,28,9,78,8,9,10,49,13,23,12,15,
+     100,20,26,18,16,70,21,24,29,30,27,26,31,33,37,39,40,45,55,51,52,60,
+     65,67,70,3,55,28,9,78,8,9,10,49,13,23,12,15,100,20,26,18,16,70,21,24,29,30,27,26,31,
+     33,37,39,40,45,55,51,52,60,65,67,70,55,28,78,8,9,10,49,13,23,12,15,100,20,26,18,70,21
+     ,24,29,30,27,26,31,33,37,39,40,45,55,51,52,60,65,67,70 ];
+//=======================================================================================
+//=======================================================================================
+//define sleep function to provide time for renderer to draw
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
+//=======================================================================================
+//=======================================================================================
+//defination of diffrent sort algo here
+//===========================================
+//insertion sort
 async function insertion_sort(val) {
   for (let i = 1; i < val.length; i++) {
     let temp = val[i];
@@ -57,7 +72,9 @@ async function insertion_sort(val) {
     await sleep(50);
   }
 }
-
+//===================================================================================
+//heap sort
+//===================================================================================
 async function heapSort(arr) {
   const n = arr.length;
 line(arr);

@@ -20,11 +20,11 @@ overflow:hidden;
 }
 #game{
 position:absolute;
-height:70%;
-width:70%%;
-top:20%;
-left:15%;
-border:5px solid #7e412c;
+height:70vh;
+width:70vw;
+top:0%;
+z-index:2;
+background:black;
 }
 
 #sort{
@@ -34,20 +34,24 @@ position:absolute;
 display:flex;
 align-items:center;
 justify-content:left;
-height:10%;
-width:100%;
-z-index:10000000000000000;
-flex-flow:row-reverse;
+height:100vh;
+width:30vw;
+left:70vw;
+z-index:1;
+flex-flow:column;
 color:wheat;
-background:#0f0a7c;
+background:#ff003f;
+}
+#timer-counter{
+position:absolute;
+top:70vh;
+height:30vh;
+width:72vw;
+z-index:0;
+background-color:#0101ff;
 
 }
-#text-data{
-margin-left:2%;
-margin-right:2%;
 
-
-}
 </style>
 </head>
 <body>
@@ -59,9 +63,11 @@ margin-right:2%;
   <option value="heap_sort">HEAP SORT</option>
   <option value="intro_sort">INTRO SORT</option>
 </select>
-<input type="file" id="data-in-file"></input>
-<input type="text" id="text-data"></input>
+<label for="favcolor">CHOOSE A COLOR FOR LINES</label>
+<input type="color" id="favcolor" name="favcolor" value="#ff0000">
+
 </div>
+<div id="timer-counter"></div>
     <canvas id="game"></canvas> 
     <script src="sort.js"></script>
 </body>
