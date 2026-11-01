@@ -51,21 +51,26 @@ z-index:0;
 background-color:#0101ff;
 
 }
+#favcolor{
+margin-top:7vh;
 
+}
 </style>
 </head>
 <body>
     <div id="container">    
 <label for="Sort_algo">  Choose a Sorting algorithm</label>
-<select id="sort" name="Sort_algo">
+<select id="sort" name="Sort_algo" default="choose">
+
+    <option value="choose">CHOOSE</option>
   <option value="insertion_sort">INSERTION SORT</option>
   <option value="merge_sort">MERGE SORT</option>
   <option value="heap_sort">HEAP SORT</option>
   <option value="intro_sort">INTRO SORT</option>
 </select>
-<label for="favcolor">CHOOSE A COLOR FOR LINES</label>
 <input type="color" id="favcolor" name="favcolor" value="#ff0000">
 
+<label for="favcolor">CHOOSE A COLOR FOR LINES</label>
 </div>
 <div id="timer-counter"></div>
     <canvas id="game"></canvas> 

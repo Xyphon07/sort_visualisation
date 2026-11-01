@@ -15,12 +15,18 @@ function line(num) {
 const can = document.querySelector("canvas");
 const can_mode = can.getContext("2d");
 const choosed_algo=document.getElementById("sort");
+//===================================================================================
+//for chaginging line color
+//===================================================================================
 can_mode.fillStyle = "red";
+const color_change_line= document.getElementById("favcolor");
+color_change_line.addEventListener('change', (event) => {
+can_mode.fillStyle = event.target.value;
+  });
 //=====================================================================================
 //=====================================================================================
 //choose sort algo to render 
 choosed_algo.addEventListener("change", (event) => {
-
 let choice=event.target.value;
   if(choice === "insertion_sort"){
 insertion_sort(structuredClone(custom_val));
@@ -28,6 +34,10 @@ insertion_sort(structuredClone(custom_val));
     else if(choice == "heap_sort"){
         heapSort(structuredClone(custom_val));
 
+
+    }
+    else if(choice =="choose"){
+line(0);
 
     }
     else{
